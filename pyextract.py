@@ -8,10 +8,13 @@ from statuslib import status as s
 
 ### Change the configuration here.
 
-filename = 'your_file.xlsx'             # make sure to add file extension
-                                        # e.g. (.xls, .xlsx)
-output_filename = 'desired_filename'    # without file extension
-needed_data = [1, 2, 3]                 # change int to needed rows.
+# make sure to add file extension, e.g (.xls, xlsx)
+# don't add file extension to output filename
+# change the int to extract the needed rows on the file.
+
+filename = 'your_file.xlsx'                                                     
+needed_data = [1, 2, 3]
+output_filename = 'desired_filename'    
 
 
 ### Do not touch the code below
@@ -85,7 +88,7 @@ def print_rows(excel):
 
 
 
-def main(filename, output_name='generated_data', needed_data):
+def main(filename, needed_data, output_name='generated_data'):
     
     name = excel_to_csv(filename, 'mydata')
 
@@ -96,4 +99,4 @@ def main(filename, output_name='generated_data', needed_data):
 
 if __name__ == '__main__':
 
-    main(filename, output_filename, needed_data)
+    main(filename, needed_data, output_filename)
